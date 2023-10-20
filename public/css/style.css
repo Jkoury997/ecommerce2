@@ -1,0 +1,234 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4; /* Un gris muy claro */
+    
+}
+.bg-withe {
+    background-color: white;
+}
+.navbar.bg-body-tertiary, header {
+    background-color: #df7eb2 !important; /* Color rosa de fondo */
+    color: white; /* Letras blancas */
+}
+.c-white{
+    color: white !important;
+}
+.navbar.bg-body-tertiary .bi {
+    color: white !important;
+}
+.navbar.bg-body-tertiary .cart {
+    background-color: white !important; /* Color rosa de fondo para el número */
+    color: #df7eb2 !important; /* Color rosa de fondo para el número */
+}
+.badge-new{
+    background-color: #df7eb2;
+    color: white;
+}
+.navbar-toggler-icon {
+    filter: invert(100%); /* Esto cambiará el ícono a blanco */
+}
+.navbar.bg-body-tertiary .btn-light {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.buttom-hambuguer {
+    color: white;
+    border: none;
+
+}
+
+hr {
+    border: none; /* Elimina el borde por defecto */
+    height: 2px; /* Define el grosor de la línea */
+    background-color: #b3b3b3; /* Le da un color rosa a la línea */
+    margin: 20px 0; /* Añade un margen arriba y abajo de la línea */
+}
+/* Buttom */
+
+.btn-pink {
+    color: white;
+    border: none;
+    background-color: #df7eb2 !important; /* Color rosa de fondo */
+
+}
+
+.btn-pink-line{
+    color: #df7eb2;
+    border: #df7eb2;
+    border: 1px solid;
+}
+
+
+.btn-pink:hover, .btn-pink-line:hover{
+    background-color: #e068a8 !important;
+    border: #e068a8;
+}
+
+
+
+
+
+
+/* scrroll de categoria */
+.scrollable-menu {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    -webkit-overflow-scrolling: touch; 
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Asegura que los elementos estén uno debajo del otro */
+    flex: none;
+    margin-right: 10px;
+}
+
+.menu-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    justify-content: center; /* Centrar verticalmente */
+    height: 100%;
+}
+.item-logo {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    align-self: center; /* Asegura que el logo esté centrado en su contenedor */
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+}
+.menu-item .nav-link {
+    padding: 0;
+}
+.logo-wrapper, .item-text {
+    height: auto;
+}
+
+
+/* ... tus otros estilos ... */
+
+.item-text {
+    color: #757575; /* Gris medio */
+    text-align: center;
+}
+
+
+.menu-item a:hover .item-text {
+
+    color: #333; /* Un color más oscuro al hacer hover */
+}
+
+.menu-item a:hover .item-logo,
+.menu-item a:hover .item-text {
+    opacity: 0.8; /* Disminuir la opacidad al hacer hover */
+}
+.menu-item a:hover {
+    text-decoration: none; /* Asegurarse de que no hay subrayado al hacer hover */
+}
+
+.menu-item a:focus {
+    outline: none;
+}
+
+
+
+
+
+/*scroll de productos */
+.product-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image img {
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Estilos para el título del artículo */
+.articulo-titulo {
+    font-size: 24px; /* Tamaño ejemplo, ajústalo según tus necesidades */
+    font-weight: bold;
+    margin-bottom: 8px; /* Espacio entre el título y la descripción */
+    color: #333; /* Color oscuro para buen contraste */
+    cursor: pointer; /* Si es clicable */
+    transition: color 0.2s; /* Suave transición para el hover */
+}
+
+/* Estilos para la descripción del artículo */
+.articulo-descripcion {
+    font-size: 16px;
+    color: #555; /* Un color ligeramente más claro que el título */
+    line-height: 1.5; /* Espaciado entre líneas para mejorar la legibilidad */
+}
+
+.titulo-destacados {
+    font-size: 28px;
+    color: #333; /* un color oscuro para buen contraste */
+    text-align: left; 
+    margin-bottom: 20px; /* espacio entre el título y los productos */
+    padding-bottom: 10px; /* espacio entre el texto y la línea */
+}
+
+
+
+ /* Media queries para tablet y celulares */
+ @media (max-width: 992px) {  /* Considerando que 992px es el límite de Bootstrap para dispositivos medianos */
+    .product-card {
+        max-width: 200px;
+        margin: 0 auto;  /* Centrar las tarjetas si su ancho es menor al contenedor */
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-destacados {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Estilo para pantallas grandes */
+@media (min-width: 992px) {
+    .menu-item {
+        /* Ajusta el padding o margin como desees */
+        padding: 15px 0; 
+    }
+
+    .item-logo {
+        /* Aumenta el tamaño del logo */
+        width: 80px;
+        height: 80px;
+    }
+
+    .item-text {
+        /* Aumenta el tamaño del texto de la categoría si lo deseas */
+        font-size: 1.2em;
+    }
+    .custom-banner img {
+        width: 100%; /* Ajusta este valor según tus preferencias */
+        max-width: 900px; /* Puedes establecer un ancho máximo si lo prefieres */
+        max-height: 900px;
+    }
+}

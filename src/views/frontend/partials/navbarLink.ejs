@@ -1,0 +1,26 @@
+<div class="mt-2">
+    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item position-relative">
+            <a class="nav-link fs-5 "href="#">Lanzamientos!<span class="badge text-bg-primary ms-1 position-absolute top-30 start-15 btn-pink" style="font-size: xx-small;">Nuevo</span></a>
+            
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Todos productos
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ropa Interior</a></li>
+            <li><a class="dropdown-item" href="#">Traje de Baño</a></li>
+            <li><a class="dropdown-item" href="#">Bombachas</a></li>
+            <li><a class="dropdown-item" href="#">Pijamas</a></li>
+            <li><a class="dropdown-item" href="#">Medias</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+</div>
+<% if(userData) { %>
+  <div class="">
+      <a class="btn btn-outline-primary btn-pink-line" href="/logout">Cerrar sesion</a>
+    </div>
+  <% }%>

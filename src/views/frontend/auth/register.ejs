@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+    <title>Crear una Cuenta</title>
+</head>
+
+<body>
+    <header>
+        <%- include("../partials/navbar") %>
+    </header>
+    <div class="container-fluid p-0">
+        <div class="collapse multi-collapse" id="searchCollapse">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="searchData"
+                    placeholder="Buscá corpiños, bombachas, medias ,trajes de baño y más...">
+                <label for="searchData">Buscá Marca, modelo, articulo y más...</label>
+            </div>
+        </div>
+    </div>
+
+    <main class="container mt-2">
+        <div class="shadow p-5 rounded bg-withe">
+            <h1 class="fs-3 mb-4">Crear una cuenta</h1>
+            <form action="/register" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <% if(errors && errors.firstname) { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control is-invalid" id="floatingInputfirstname" name="firstname" value="<%= oldData ? oldData.firstname :"" %>">
+                                <label for="floatingInputfirstname"><%= errors.firstname.msg %></label>
+                            </div>
+                        <% }else { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control" id="floatingInputfirstname"  name="firstname" placeholder="Nombre">
+                                <label for="floatingInputfirstname">Nombre</label>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="col-md-6">
+                        <% if(errors && errors.lastname) { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control is-invalid" id="floatingInputLastname" name="lastname" value="<%= oldData ? oldData.lastname :"" %>">
+                                <label for="floatingInputLastname"><%= errors.lastname.msg %></label>
+                            </div>
+                        <% }else { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control" id="floatingInputLastname" name="lastname" placeholder="Apellido">
+                                <label for="floatingInputLastname">Apellido</label>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <% if(errors && errors.dni) { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="number" class="form-control is-invalid" id="floatingInputdni" name="dni" value="<%= oldData ? oldData.dni :"" %>">
+                                <label for="floatingInputdni"><%= errors.dni.msg %></label>
+                            </div>
+                        <% }else { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="number" class="form-control" id="floatingInputdni" name="dni" placeholder="Nombre">
+                                <label for="floatingInputdni">D.N.I.</label>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="col-md-6">
+                        <% if(errors && errors.born) { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="date" class="form-control is-invalid" id="floatingInputborn" name="born" value="<%= oldData ? oldData.born :"" %>">
+                                <label for="floatingInputborn"><%= errors.born.msg %></label>
+                            </div>
+                        <% }else { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="date" class="form-control" id="floatingInputborn" name="born" placeholder="Fecha de nacimiento">
+                                <label for="floatingInputborn">Fecha de nacimiento</label>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+
+                <% if(errors && errors.email) { %>
+                    <div class="form-floating mb-4 ">
+                        <input type="email" class="form-control is-invalid" id="floatingInputInvalid" name="email" value="<%= oldData ? oldData.email :"" %>">
+                        <label for="floatingInputInvalid"><%= errors.email.msg %></label>
+                    </div>
+                <% }else { %>
+                    <div class="form-floating mb-4 ">
+                        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="nombre@dominio.com">
+                        <label for="floatingInput">Email</label>
+                    </div>
+                <% } %>
+                <% if(errors && errors.password) { %>
+                    <div class="form-floating mb-4 ">
+                        <input type="password" class="form-control is-invalid" id="floatingInputInvalid" name="password">
+                        <label for="floatingInputInvalid"><%= errors.password.msg %></label>
+                    </div>
+                <% }else { %>
+                    <div class="form-floating mb-4">
+                        <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="contaseña">
+                        <label for="floatingPassword">Contraseña</label>
+                    </div>
+                <% } %>
+                <% if(errors && errors.confirmPassword) { %>
+                    <div class="form-floating mb-4 ">
+                        <input type="password" class="form-control is-invalid" id="floatingInputInvalid" name="confirmPassword">
+                        <label for="floatingInputInvalid"><%= errors.confirmPassword.msg %></label>
+                    </div>
+                <% }else { %>
+                    <div class="form-floating mb-4">
+                        <input type="password" class="form-control" id="floatingPasswordConfirm" name="confirmPassword" placeholder="Confirma contaseña">
+                        <label for="floatingPasswordConfirm">Confirmar contraseña</label>
+                    </div>
+                <% } %>     
+                <% if (errors && errors.register) { %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= errors.register %>
+                    </div>
+                <% } %>
+                
+                <div class="d-grid gap-2 mt-4 rounded">
+                    <button class="btn btn-primary btn-pink shadow mb-2" type="submit">Crear cuenta</button>
+                    <button class="btn btn-outline-primary btn-pink-line shadow  mb-2" type="button">Ya tengo cuenta</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include("../partials/footer") %>
+    <!-- Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>

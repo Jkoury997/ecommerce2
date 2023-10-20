@@ -1,0 +1,29 @@
+<div class="row d-flex align-items-center"> <!-- Agregado align-items-center -->
+    <div class="col-auto d-flex align-items-center"> <!-- Agregado d-flex y align-items-center -->
+        <img src="./images/ropaInterior.jpg" alt="Logo Categoría 1" class="rounded rounded-circle" style="width: 100px;">
+    </div>
+    <% if(userData) { %>
+    <div class="col-8 d-flex flex-column justify-content-center p-3 ps-1">
+        <p class="fs-6 fw-bolder mb-1 text-start"><%= userData.firstname +" "+ userData.lastname %></p>
+        <p class="fs-6 text-start">Mis Puntos : 10000</p>
+    </div>
+    <% } else {%>
+        <div class="col-8 d-flex flex-column justify-content-center p-3 ps-1">
+            <p class="fs-6 fw-bolder mb-1 text-start">Ingresar a tu cuenta</p>
+            <p class="fs-6 text-start">Accede a promociones, ofertas y gestiona tus datos</p>
+        </div>
+    <% }%>
+</div>
+<div>
+    <% if(userData) { %>
+        <div class="d-grid gap-2">
+            <a class="btn btn-outline-primary btn-pink-line" href="/users/profile">Perfil</a>
+            <a class="btn btn-outline-primary btn-pink-line">Direcciones</a>
+          </div>
+        <% } else {%>
+            <div class="d-grid gap-2">
+                <a class="btn btn-outline-primary btn-pink" href="/login">Ingresar</a>
+                <a class="btn btn-outline-primary btn-pink-line" href="/register">Crear una cuenta</a>
+              </div>
+        <% }%>
+</div>

@@ -1,0 +1,41 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <!-- Boton Menu hamburguesa -->
+        <button class="btn btn-light buttom-hambuguer pt-0 pb-0 pe-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i class="bi bi-list" style="font-size: 24px;"></i>
+        </button>
+        <!-- OffCanva menu hamburguesa-->
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header d-flex flex-row-reverse pb-0">
+              <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body pt-0">
+                <%- include("./userdata") %>
+                <%- include("./navbarLink") %>
+            </div>
+            
+        </div>
+        <!-- Texto -->
+        <a class="navbar-brand ms-3 c-white" href="#">MK Online</a>
+        <div class="ms-auto">
+            <!-- Ícono de lupa -->
+            <button class="btn btn-light me-1" type="button" data-bs-toggle="collapse" data-bs-target="#searchCollapse" aria-expanded="false" aria-controls="searchCollapse">
+                <i class="bi bi-search"></i>
+            </button>
+
+            <button class="btn btn-light me-1" type="button">
+                <i class="bi bi-person-fill"></i>
+                <% if(userData){} %>
+            </button>
+
+            <!-- Ícono de carrito de compras -->
+            <button type="button" class="btn btn-light me-1 position-relative">
+                <i class="bi bi-bag"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-secondary cart">
+                  10
+                  <span class="visually-hidden">Productos</span>
+                </span>
+            </button>
+        </div>
+    </div>
+</nav>

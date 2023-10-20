@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+        <title>Perfil</title>
+</head>
+
+<body>
+    <header><%- include("../partials/navbar") %></header>
+    <div class="container-fluid p-0">
+        <div class="collapse multi-collapse" id="searchCollapse">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="searchData"
+                    placeholder="Buscá corpiños, bombachas, medias ,trajes de baño y más..." />
+                <label for="searchData">Buscá Marca, modelo, articulo y más...</label>
+            </div>
+        </div>
+    </div>
+
+    <main class="container mt-2">
+        <div class="shadow p-5 rounded bg-withe">
+            <h1 class="fs-3 mb-4">Perfil</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="floatingInputfirstname" name="firstname"
+                            placeholder="Nombre" value="<%= userData.firstname %>" disabled/>
+                        <label for="floatingInputfirstname">Nombre</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control" id="floatingInputLastname" name="lastname"
+                            placeholder="Apellido" value="<%= userData.lastname %>" disabled/>
+                        <label for="floatingInputLastname">Apellido</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-floating mb-4">
+                        <input type="number" class="form-control" id="floatingInputdni" name="dni" placeholder="Nombre"
+                            value="<%= userData.dni %>" disabled/>
+                        <label for="floatingInputdni">D.N.I.</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-floating mb-4">
+                        <input type="date" class="form-control" id="floatingInputborn" name="born"
+                            placeholder="Fecha de nacimiento" value="<%= userData.born %>" disabled/>
+                        <label for="floatingInputborn">Fecha de nacimiento</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating mb-4">
+                <input type="email" class="form-control" id="floatingInput" name="email"
+                    placeholder="nombre@dominio.com" value="<%= userData.email %>" disabled/>
+                <label for="floatingInput">Email</label>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include("../partials/footer") %>
+        <!-- Bootstrap JS y Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
