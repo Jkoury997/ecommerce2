@@ -56,12 +56,8 @@ module.exports = {
 
       // Generar token JWT
       const token = jwt.sign({
-        id: user.id,
+        id: user.uuid,
         email: user.email,
-        firstname: user.firstname,
-        lastname: user.lastname,
-        dni : user.dni,
-        born : user.born
       }, 'SECRET_KEY', { expiresIn: '1h' });
 
       return { message: "Inicio de sesión exitoso", token };

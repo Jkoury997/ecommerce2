@@ -1,4 +1,5 @@
 const authService = require("../../services/frontend/authService");
+const userService = require("../../services/frontend/userService");
 
 // Controlador para registrar un nuevo usuario
 module.exports = {
@@ -56,7 +57,6 @@ module.exports = {
         sameSite: 'strict', // Protege contra CSRF
         maxAge: 3600000 // Tiempo de vida de la cookie
       });
-      
       res.redirect("/users/profile");
       
     } catch (error) {

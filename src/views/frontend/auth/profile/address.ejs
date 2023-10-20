@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../../partials/head") %>
+        <title>Perfil</title>
+</head>
+
+<body>
+    <header><%- include("../../partials/navbar") %></header>
+    <div class="container-fluid p-0">
+        <div class="collapse multi-collapse" id="searchCollapse">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="searchData"
+                    placeholder="Buscá corpiños, bombachas, medias ,trajes de baño y más..." />
+                <label for="searchData">Buscá Marca, modelo, articulo y más...</label>
+            </div>
+        </div>
+    </div>
+
+    <main class="container mt-2">
+        <div class="p-3 rounded bg-withe">
+            <h1 class="fs-6 fw-bolder mt-4 mb-3 ms-2">Mis Direcciones</h1>
+            <section class="shadow rounded">
+                <div class="d-grid gap-2">
+                    <a class="btn btn-pink"
+                        href="/users/profile/addNewAddress">
+                            <span> Agregar direccion</span>
+                    </a>
+                </div>
+            </section>
+            <section class="shadow rounded">
+                <div class="d-flex align-items-center p-2 mb-2 mt-2">
+                    <i class="bi bi-house bi-lg p-2 me-2"></i> <!-- Añadido la clase bi-lg -->
+                    <div>
+                        <h5 class="fw-bolder fs-6 mb-1">Casa</h5>
+                        <span class="fs-6">cañada de gomez 960, liniers, capital federal</span>
+                    </div>
+                    <div class="ms-auto">
+                        <i class="bi bi-chevron-right ms-auto p-2"></i>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include("../../partials/footer") %>
+        <!-- Bootstrap JS y Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../../partials/head") %>
+        <title>Perfil</title>
+</head>
+
+<body>
+    <header><%- include("../../partials/navbar") %></header>
+    <div class="container-fluid p-0">
+        <div class="collapse multi-collapse" id="searchCollapse">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="searchData"
+                    placeholder="Buscá corpiños, bombachas, medias ,trajes de baño y más..." />
+                <label for="searchData">Buscá Marca, modelo, articulo y más...</label>
+            </div>
+        </div>
+    </div>
+
+    <main class="container mt-2">
+        <div class="p-3 rounded bg-withe">
+            <section class="text-center">
+                <img src="../images/logo-Marcela-Koury.png" class="rounded-circle img-profile" alt="Imagen de perfil">
+                <div>
+                    <h3 class="fs-4"><%= userData.firstname +" "+ userData.lastname %></h3>
+                    <h5 class="fs-6"><%= userData.email %></h5>
+                </div>
+            </section>
+            <h1 class="fs-6 fw-bolder mt-4 mb-3 ms-2">Configuracion de Cuenta</h1>   
+            <section class="shadow rounded">
+                <div class="d-grid gap-2">
+                 <a class="btn btn-outline-primary btn-pink-line text-start text-dark border-0" href="/users/profile/account">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-person me-2"></i>
+                        <span>Mis datos personales</span>
+                        <i class="bi bi-chevron-right ms-auto p-2"></i>
+                    </div>
+                </a>
+                <a class="btn btn-outline-primary btn-pink-line text-start text-dark border-0" href="/users/profile/address">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-house me-2"></i>
+                        <span>Mis direcciones</span>
+                        <i class="bi bi-chevron-right ms-auto p-2"></i>
+                    </div>
+                </a>
+                <a class="btn btn-outline-primary btn-pink-line text-start text-dark border-0" href="">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-truck me-2"></i>
+                        <span>Mis pedidios</span>
+                        <i class="bi bi-chevron-right ms-auto p-2"></i>
+                    </div>
+                </a>
+                <a class="btn btn-outline-primary btn-pink-line text-start text-dark border-0" href="/logout">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-box-arrow-in-left me-2"></i>
+                        <span>Cerrar sesion</span>
+                        <i class="bi bi-chevron-right ms-auto p-2"></i>
+                    </div>
+                </a>
+                  </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include("../../partials/footer") %>
+        <!-- Bootstrap JS y Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -71,6 +71,8 @@ hr {
 
 
 
+
+
 /* scrroll de categoria */
 .scrollable-menu {
     display: flex;
@@ -192,6 +194,11 @@ hr {
     padding-bottom: 10px; /* espacio entre el texto y la línea */
 }
 
+/* Profile */
+.img-profile{
+    width: 120px;
+}
+
 
 
  /* Media queries para tablet y celulares */
@@ -231,4 +238,8 @@ hr {
         max-width: 900px; /* Puedes establecer un ancho máximo si lo prefieres */
         max-height: 900px;
     }
+    .img-profile{
+        width: 160px;
+    }
+    
 }
