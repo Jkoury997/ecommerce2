@@ -21,7 +21,7 @@
     <main class="container mt-2">
         <div class="p-3 rounded bg-withe">
             <h1 class="fs-6 fw-bolder mt-4 mb-3 ms-2">Nueva direccion</h1>   
-            <section class="shadow rounded">
+            <section class="rounded">
                 <form action="/users/profile/account" method="post">
                 <div class="row">
                     <div class="col-md-6">
@@ -52,67 +52,112 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <% if(errors && errors.dni) { %>
+                    <div class="col-md-4">
+                        <% if(errors && errors.street) { %>
                             <div class="form-floating mb-4 ">
-                                <input type="number" class="form-control is-invalid" id="floatingInputdni" name="dni" value="<%= oldData ? oldData.dni :"" %>">
-                                <label for="floatingInputdni"><%= errors.dni.msg %></label>
+                                <input type="text" class="form-control is-invalid" id="floatingInputstreet" name="street" value="<%= oldData ? oldData.street :"" %>">
+                                <label for="floatingInputstreet"><%= errors.street.msg %></label>
                             </div>
                         <% }else { %>
                             <div class="form-floating mb-4 ">
-                                <input type="number" class="form-control" id="floatingInputdni" name="dni" placeholder="Nombre" value="<%= userData ? userData.dni :"" %>">
-                                <label for="floatingInputdni">D.N.I.</label>
+                                <input type="text" class="form-control" id="floatingInputstreet" name="street" placeholder="Calle" value="<%= userData ? userData.street :"" %>">
+                                <label for="floatingInputstreet">Calle</label>
                             </div>
                         <% } %>
                     </div>
-                    <div class="col-md-6">
-                        <% if(errors && errors.born) { %>
+                    <div class="col-md-2">
+                        <% if(errors && errors.number) { %>
                             <div class="form-floating mb-4 ">
-                                <input type="date" class="form-control is-invalid" id="floatingInputborn" name="born" value="<%= oldData ? oldData.born :"" %>">
-                                <label for="floatingInputborn"><%= errors.born.msg %></label>
+                                <input type="number" class="form-control is-invalid" id="floatingInputnumber" name="number" value="<%= oldData ? oldData.number :"" %>">
+                                <label for="floatingInputnumber"><%= errors.number.msg %></label>
                             </div>
                         <% }else { %>
                             <div class="form-floating mb-4 ">
-                                <input type="date" class="form-control" id="floatingInputborn" name="born" placeholder="Fecha de nacimiento"  value="<%= userData ? userData.born :"" %>">
-                                <label for="floatingInputborn">Fecha de nacimiento</label>
+                                <input type="number" class="form-control" id="floatingInputnumber" name="number" placeholder="Numero"  value="<%= userData ? userData.number :"" %>">
+                                <label for="floatingInputnumber">Numero</label>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="col-md-2">
+                        <% if(errors && errors.postalCode) { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="number" class="form-control is-invalid" id="floatingInputpostalCode" name="postalCode" value="<%= oldData ? oldData.postalCode :"" %>">
+                                <label for="floatingInputpostalCode"><%= errors.postalCode.msg %></label>
+                            </div>
+                        <% }else { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="number" class="form-control" id="floatingInputpostalCode" name="postalCode" placeholder="Codigo Postal"  value="<%= userData ? userData.postalCode :"" %>">
+                                <label for="floatingInputpostalCode">Codigo Postal</label>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="col-md-2">
+                        <% if(errors && errors.floor) { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control is-invalid" id="floatingInputfloor" name="Piso" value="<%= oldData ? oldData.floor :"" %>">
+                                <label for="floatingInputfloor"><%= errors.floor.msg %></label>
+                            </div>
+                        <% }else { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control" id="floatingInputfloor" name="floor" placeholder="Piso"  value="<%= userData ? userData.floor :"" %>">
+                                <label for="floatingInputfloor">Piso</label>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="col-md-2">
+                        <% if(errors && errors.departament) { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control is-invalid" id="floatingInputdepartament" name="departament" value="<%= oldData ? oldData.departament :"" %>">
+                                <label for="floatingInputdepartament"><%= errors.departament.msg %></label>
+                            </div>
+                        <% }else { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control" id="floatingInputdepartament" name="departament" placeholder="Departamento"  value="<%= userData ? userData.departament :"" %>">
+                                <label for="floatingInputdepartament">Departamento</label>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="col-md-4">
+                        <% if(errors && errors.district) { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control is-invalid" id="floatingInputdistrict" name="district" value="<%= oldData ? oldData.district :"" %>">
+                                <label for="floatingInputdistrict"><%= errors.district.msg %></label>
+                            </div>
+                        <% }else { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control" id="floatingInputdistrict" name="district" placeholder="Barrio"  value="<%= userData ? userData.district :"" %>">
+                                <label for="floatingInputdistrict">Barrio</label>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="col-md-4">
+                        <% if(errors && errors.state) { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control is-invalid" id="floatingInputstate" name="state" value="<%= oldData ? oldData.state :"" %>">
+                                <label for="floatingInputstate"><%= errors.state.msg %></label>
+                            </div>
+                        <% }else { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control" id="floatingInputstate" name="state" placeholder="Provincia"  value="<%= userData ? userData.state :"" %>">
+                                <label for="floatingInputstate">Provincia</label>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="col-md-4">
+                        <% if(errors && errors.country) { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control is-invalid" id="floatingInputcountry" name="country" value="<%= oldData ? oldData.country :"" %>">
+                                <label for="floatingInputcountry"><%= errors.country.msg %></label>
+                            </div>
+                        <% }else { %>
+                            <div class="form-floating mb-4 ">
+                                <input type="text" class="form-control" id="floatingInputcountry" name="country" placeholder="Pais"  value="<%= userData ? userData.country :"" %>">
+                                <label for="floatingInputcountry">Pais</label>
                             </div>
                         <% } %>
                     </div>
                 </div>
 
-                <% if(errors && errors.email) { %>
-                    <div class="form-floating mb-4 ">
-                        <input type="email" class="form-control is-invalid" id="floatingInputInvalid" name="email" value="<%= oldData ? oldData.email :"" %>">
-                        <label for="floatingInputInvalid"><%= errors.email.msg %></label>
-                    </div>
-                <% }else { %>
-                    <div class="form-floating mb-4 ">
-                        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="nombre@dominio.com" value="<%= userData ? userData.email :"" %>">
-                        <label for="floatingInput">Email</label>
-                    </div>
-                <% } %>
-                <% if(errors && errors.password) { %>
-                    <div class="form-floating mb-4 ">
-                        <input type="password" class="form-control is-invalid" id="floatingInputInvalid" name="password">
-                        <label for="floatingInputInvalid"><%= errors.password.msg %></label>
-                    </div>
-                <% }else { %>
-                    <div class="form-floating mb-4">
-                        <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="contaseña">
-                        <label for="floatingPassword">Contraseña</label>
-                    </div>
-                <% } %>
-                <% if(errors && errors.confirmPassword) { %>
-                    <div class="form-floating mb-4 ">
-                        <input type="password" class="form-control is-invalid" id="floatingInputInvalid" name="confirmPassword">
-                        <label for="floatingInputInvalid"><%= errors.confirmPassword.msg %></label>
-                    </div>
-                <% }else { %>
-                    <div class="form-floating mb-4">
-                        <input type="password" class="form-control" id="floatingPasswordConfirm" name="confirmPassword" placeholder="Confirma contaseña">
-                        <label for="floatingPasswordConfirm">Confirmar contraseña</label>
-                    </div>
-                <% } %>
                 <div class="d-grid gap-2">
                     <button class="btn btn-outline-primary btn-pink" type="submit">Guardar cambios</button>
                   </div> 

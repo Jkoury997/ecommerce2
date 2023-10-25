@@ -85,22 +85,11 @@ showRecoveryForm: (req, res) => {
     userData: req.session.userData ? req.session.userData : null,
   });
 },
-handleRecoveryRequest: async (req, res) => {
-  const email = req.body.email;
-  const otp = generateOTP();  // Deberías tener una función para generar un OTP
-  await sendEmail(email, otp);  // Envía el OTP al correo electrónico del usuario
-  
-  // Guarda el OTP en la base de datos o en memoria para su verificación posterior
-  // ...
-
-  res.redirect('/verify-otp');
-},
 generateAndSendOTP: async  (req, res) => {
-  const userId = req.user.uuid;
-    const userEmail = req.user.email;  // Asume que tienes el correo electrónico del usuario en req.user
+    const userEmail = req.body.email;  // Asume que tienes el correo electrónico del usuario en req.user
 
     try {
-        const otpCode = await otpService.saveOTPForUser(userId, userEmail);
+        const otpCode = await otpService.saveOTPForUser(userEmail);
         res.json({ message: 'OTP generado y enviado exitosamente por correo electrónico' });
     } catch (error) {
         res.status(500).json({ message: 'Error al generar y enviar OTP', error: error.message });

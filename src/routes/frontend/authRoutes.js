@@ -13,7 +13,7 @@ router.post('/register',validatorAuth.register,validatorForm.register, authContr
 router.post('/login',validatorAuth.login,validatorForm.login, authController.login);
 //Recupero de contraseña
 router.get('/password-recovery', authController.showRecoveryForm);
-router.post('/password-recovery', authController.handleRecoveryRequest);
+router.post('/password-recovery', authController.generateAndSendOTP);
 
 
 //cierre de session

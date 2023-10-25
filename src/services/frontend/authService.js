@@ -65,7 +65,7 @@ module.exports = {
       throw error;
     }
   },
-  saveOTPForUser: async function (userId) {
+  saveOTPForUser: async function (userEmail) {
     function generateOTP() {
       return Math.floor(100000 + Math.random() * 900000).toString();
     }
@@ -73,7 +73,7 @@ module.exports = {
     const expiryDate = new Date(Date.now() + 15*60*1000);
 
     const otpRecord = await OTPModel.create({
-        userId: userId,
+        userEmail: userEmail,
         otpCode: otpCode,
         expiryDate: expiryDate
     });
